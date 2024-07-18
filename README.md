@@ -62,7 +62,7 @@
 
 # 三、使用手册
 
-1、程序的config.ini是配置文件，[icpapi]下面的appid和key的icp备案兜底付费查询接口，icp备案一共调用三个接口，会先调用两个免费接口，如果两个免费接口都没有查询到数据，则会调用第三个付费接口，建议申请添加appid和key，申请地址：https://www.icpapi.com/user.html的appid和key填写位置如下：
+1、程序的config.ini是配置文件，[icpapi]下面的appid和key的icp备案兜底付费查询接口，icp备案一共调用三个接口，会先调用两个免费接口，如果两个免费接口都没有查询到数据，则会调用第三个付费接口，建议申请添加appid和key，申请地址：https://www.icpapi.com/user.html，appid和key填写位置如下：
 
 ​![image](./images/image-20240718114252-r6j1olq.png)​
 
