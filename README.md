@@ -108,4 +108,7 @@ md5: 1cbff565d5eb28f46e2718a979c86f27
 
 欢迎关注微信公众号：
 
-​![5a23aea3-00de-4b51-9d67-8d222cbe5b3a](./images/5a23aea3-00de-4b51-9d67-8d222cbe5b3a-20240718122502-5vtppk3.jpg)​
+​![5a23aea3-00de-4b51-9d67-8d222cbe5b3a](./images/5a23aea3-00de-4b51-9d67-8d222cbe5b3a-20240718122502-5vtppk3.jpg)
+
+## Stargazers over time
+[![Stargazers over time](https://starchart.cc/xingyunsec/IPTraceabilityTool.svg?variant=adaptive)](https://starchart.cc/xingyunsec/IPTraceabilityTool)
