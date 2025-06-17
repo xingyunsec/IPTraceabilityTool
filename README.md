@@ -1,114 +1,145 @@
-# IP溯源工具使用说明
+# IP白名单过滤与溯源工具2.0使用说明
 
 **温馨提示：**
 
-该工具运行时不会对目标IP主动扫描，但是会调用第三方接口，所以会存在对互联网发送大量HTTP请求情况，如果网络环境比较特殊的场景下请勿使用该工具，避免引起不必要的麻烦。
+该工具运行时不会使用本机主动对目标IP进行扫描，但是会调用第三方接口，所以会存在对互联网发送大量HTTP请求情况，使用时请保持网络畅通，如果网络环境比较特殊的场景下请勿使用该工具，避免引起不必要的麻烦。
 
 **免责声明：**
 
 此工具仅限于学习交流，请在下载后24小时内删除，请勿非法使用该工具，用户承担因使用此工具而导致的所有法律和相关责任！作者不承担任何法律责任！
 
-IP_Traceability_ToolV1.2.exe 哈希:
-SHA1：6af02048374523ff27869e810f972314041a9390
-md5: 1cbff565d5eb28f46e2718a979c86f27
+#### 文件hash：
+
+MD5 的 IPTraceabilityToolV2.0.exe 哈希:4859a000990c6c7fc9cedceccc07fdc0  
+
 # 一、工具背景
 
 背景：
 
-在攻防演练期间，对于重保值守人员，某些客户要求对攻击IP都进行分析溯源，发现攻击IP的时候，需要针对攻击IP进行分析，如果有关键信息输出报告，针对该需求，产生了这个工具。
+1、防止攻防期间误封客户业务IP。
+
+2、在攻防演练期间，对于重保值守人员，某些客户要求对攻击IP都进行分析溯源，发现攻击IP的时候，需要针对攻击IP进行分析，如果有关键信息输出报告，针对该需求，产生了这个工具。
 
 # 二、功能实现
 
-## V1.2修改：
+实际功能是在去年发布的V1.2命令行版本上新增，核心功能通过溯源扩展，增加GUI。
 
-1.把基于本地telnet的IP端口查询方式改成调用接口查询。
+项目地址：https://github.com/xingyunsec/IPTraceabilityTool
 
-2.whois信息查询接口单一，增加多个接口，确保whois信息查询的准确性。
+1、可导入或单条添加自定义白名单，复制IP从白名单中进行过滤，单次最多支持1000IP；
 
-3.增加多线程技术，提高程序运行速度。
+2、支持对过滤后的非白名单IP一键溯源，主要溯源内容：归属地、端口、IP绑定域名、域名whois、域名ICP备案。
 
-4.修复cdn查询过长的bug。
+3、支持对溯源后的IP批量导出html报告、批量导出excel。
 
-5.更新过滤ip地址，现在输入的IP可以加其他字符，会自动过滤出字符串里面存在的IP。
+4、支持对溯源结果进行筛选、搜索、排查。
 
-6.增加IP反查域名的接口，新增接口报错和成功写入日志文件。
-
-7.优化更新ip归属地的获取，增加2个接口，确保归属地查询到。
-
-8.端口查询优化，增加端口查询接口。
-
-9.整改企业微信推送方式，从原本一个IP推送一次变成IP查询一轮推送一次，每轮查询的IP个数可以在配置文件里面修改。
-
-10.修改日志输出格式，所有日志输出格式固定。
-
-11.增加每轮查询后程序延时，确保接口不会频繁请求而请求失败。
-
-## V1.1新增：
-
-1.新增将查询到的word报告发送至企业微信。
-
-## v1.0功能：
-
-1.实现支持多IP查询，会自动对IP进行去重，去掉非公网IP，去掉非IP；
-
-2.实现基于IP查询归属地的情况；
-
-3.实现基于IP查询端口开放情况，基于telnet的方式探测端口是否开放，查询端口：`21, 22, 23, 80, 135, 137, 138, 443, 888, 8888, 1433, 3306, 3389, 8080, 8081, 8082, 9090, 9091, 9092, 50050`​；
-
-4.实现基于IP查询域名绑定的情况；
-
-5.实现基于查询出的域名查询whois和icp备案的情况；
-
-6.实现整合内容输出为文本文件和word文件，如果一个IP没有绑定域名，那么认为这个IP没有价值，则输出文本文件，如果绑定了域名，则输出word；
-
-7.实现将内容输出至企业微信机器人。
+5、支持对过滤之后的白名单增加归属地复制。
 
 # 三、使用手册
 
-1、程序的config.ini是配置文件，[icpapi]下面的appid和key的icp备案兜底付费查询接口，icp备案一共调用三个接口，会先调用两个免费接口，如果两个免费接口都没有查询到数据，则会调用第三个付费接口，建议申请添加appid和key，appid和key填写位置如下：
-申请地址：https://www.icpapi.com/user.html
+1、程序运行后，需要在系统配置里面配置API，一共2个接口需要配置：
 
-​![image](./images/image-20240718114252-r6j1olq.png)​
+![image](assets/image-20250617162710-22im4li.png)
 
-​![image](./images/image-20240202105244-riqubn0.png)​
+1）接口一：https://www.apihz.cn/?shareid=10005200，可以走我的邀请码，或者直接删除后面的邀请码。
 
-2、配置文件中[scanport]下的open参数是指是否开启端口扫描，默认设置为0，如果要扫描端口需要设置为1，port里面是需要扫描的端口，可以修改。
+打开网站后注册
 
-​![image](./images/image-20240718114343-yl2q2qv.png)​
+![image](assets/image-20250617163253-0zovhmh.png)
 
-3、配置文件中的[wechat]下的send设置是否使用企业微信机器人发送提醒，设置为0不开启，设置为1开启，如果设置为1，则需要添加企业微信机器人的apikey，如下图所示：
+注册后访问接口：https://www.apihz.cn/api/wangzhanicp.html，如下图，就能得到你自己的key。
 
-​![image](./images/image-20240718114419-hmnqel8.png)​
+![image](assets/image-20250617163128-4v6yvdd.png)将id和key填入系统配置的：icpapi_apihz，然后点击保存配置即可。
 
-​![image](./images/image-20240202110324-627km9j.png)​
+![image](assets/image-20250617163501-46bj4xe.png)
 
-4、配置完成后即可开始使用，将需要查询的IP放到ip.txt文件下，无需去重。
+2）接口2：https://www.mxnzp.com?ic=WNH5MJ，可以走我的邀请码，或者直接删除后面的邀请码。
 
-​![image](./images/image-20240202110410-h954j9g.png)​
+登录网站
 
-5、双击运行：IP_Traceability_ToolV1.2.exe，等待程序运行结束。
+![image](assets/image-20250617163613-6rdtoct.png)
 
-​![image](./images/image-20240718114704-0kawxho.png)​
+在后台找到：APP_ID和APP_SECRET
 
-6、程序运行时，如果配置了企业微信机器人接口，会将查询到的结果使用机器人发送查询结果和报告。
+![image](assets/image-20250617163729-b6yz0js.png)
 
-​![image](./images/image-20240718142305-4ubqgdv.png)​
+将其填写至系统配置的icpapi_mxnzp，然后点击保存配置即可：
 
-7、如果查询到了域名，则认为这个IP属于高价值溯源IP，会在output_word下按照日期创建文件夹生成word报告并发送至企业微信，如果没有查到域名，则认为这个IP属于低价值溯源IP，会在output_txt下按照日期创建文件夹生成文本文件。
+![image](assets/image-20250617163833-xnpodcw.png)
 
-​![image](./images/image-20240718114822-pw01acc.png)​
+2、可以点击添加白名单按钮添加单条白名单。
 
-8、程序的运行日志，可在logs目录下查看，以当前日期命名的log文件
+![image](assets/image-20250617163931-78yqhue.png)
 
-​![image](./images/image-20240718114948-ehkqiz5.png)​
+3、如果需要导入多网段白名单，可以选择excel导入或者json导入：
 
-# 四、问题反馈
+![image](assets/image-20250617164123-w0s818u.png)
 
-工具有使用问题可以反馈在：https://support.qq.com/product/661923
+![image](assets/image-20250617164132-gz1e5jh.png)
 
-欢迎关注微信公众号：
+点击到名单，选择已经编辑好的白名单
 
-​![5a23aea3-00de-4b51-9d67-8d222cbe5b3a](./images/5a23aea3-00de-4b51-9d67-8d222cbe5b3a-20240718122502-5vtppk3.jpg)
+![image](assets/image-20250617164152-yu8m8bm.png)
+
+导入后会展示在白名单管理里面，选择状态可以将白名单禁用或启用。
+
+![image](assets/image-20250617164416-blbnvwf.png)
+
+注意：提取IP地址按钮是将输入的IP全部再次提取，不会经过白名单，如果要提取非白名单地址，请点击复制非白名单IP。
+
+![image](assets/image-20250617164525-jo8z5u8.png)
+
+4、过滤IP：选择勾选归属地后，过滤之后可以点击复制非白名单地址，会将归属地放到IP地址后面。如果不需要归属地，则可以在复制前去掉显示归属地选项，提取IP地址是将所有IP地址全部提出，不经过白名单过滤。
+
+![image](assets/image-20250617164752-0ag7a4o.png)
+
+5、点击溯源按钮后，会对输入的IP先进行过滤，然后将非白名单IP再进行溯源分析
+
+![image](assets/image-20250617165017-w2sfkzu.png)
+
+![image](assets/image-20250617165027-z9vveve.png)
+
+6、溯源结果可以筛选绑定了域名的IP，还可筛选未绑定域名的IP，可以筛选后将其清空，如下图，可以选择指定IP导出溯源报告。
+
+![image](assets/image-20250617165214-8tb21zs.png)
+
+7、如果查询到了域名，icp等信息，都将在溯源报告中展示。
+
+![image](assets/image-20250617165315-i8090lg.png)
+
+8、可将未溯源到域名的结果过滤后清空，只留下绑定了域名的IP。
+
+![image](assets/image-20250617165608-29h812c.png)
+
+9、如下图，IP溯源到了绑定的域名，然后域名查到了whois信息和ICP备案信息导出后的报告。
+
+![image](assets/image-20250617165934-5itiyh9.png)10、最后，可以在系统配置里面配置你需要扫描的端口信息和溯源线程数量、过滤线程数量
+
+![image](assets/image-20250617170104-m0kte6v.png)
+
+# 四、关于我
+
+工具问题可反馈至：https://support.qq.com/product/661923
+
+如有问题可在微信公众号留言反馈：
+
+![image](assets/image-20250617193856-3tv5cc9.png)
+
+如果需要进一步交流，可加入群聊：
+
+![image](assets/image-20250617194011-tk1718h.png)
+
+如需源码或其他事项沟通，请加微信：
+
+![5842aa8821c1aba47b5b156160b3d48e](assets/5842aa8821c1aba47b5b156160b3d48e-20250617194038-pks1l9h.jpg)
+
+# 五、Q&A
+
+1、目前不支持调用微步查询IP是否为恶意，因为没钱开会员。
+
+2、也不支持fofa、hunter等引擎的搜索，因为我也没会员。
+
 
 ## Stargazers over time
 [![Stargazers over time](https://starchart.cc/xingyunsec/IPTraceabilityTool.svg?variant=adaptive)](https://starchart.cc/xingyunsec/IPTraceabilityTool)
