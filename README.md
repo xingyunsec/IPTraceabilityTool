@@ -42,9 +42,8 @@ MD5 的 IPTraceabilityToolV2.0.exe 哈希:4859a000990c6c7fc9cedceccc07fdc0
 
 ![image](./images/image-20250617162710-22im4li.png)
 
-1）接口一：https://www.apihz.cn/?shareid=10005200，可以走我的邀请码，或者直接删除后面的邀请码。
-
-打开网站后注册
+1）接口一：https://www.apihz.cn/?shareid=10005200
+可以走我的邀请码，或者直接删除后面的邀请码，打开网站后注册
 
 ![image](./images/image-20250617163253-0zovhmh.png)
 
@@ -54,9 +53,9 @@ MD5 的 IPTraceabilityToolV2.0.exe 哈希:4859a000990c6c7fc9cedceccc07fdc0
 
 ![image](./images/image-20250617163501-46bj4xe.png)
 
-2）接口2：https://www.mxnzp.com?ic=WNH5MJ，可以走我的邀请码，或者直接删除后面的邀请码。
+2）接口2：https://www.mxnzp.com?ic=WNH5MJ
 
-登录网站
+可以走我的邀请码，或者直接删除后面的邀请码。登录网站：
 
 ![image](./images/image-20250617163613-6rdtoct.png)
 
