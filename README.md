@@ -47,7 +47,9 @@ MD5 的 IPTraceabilityToolV2.0.exe 哈希:4859a000990c6c7fc9cedceccc07fdc0
 
 ![image](./images/image-20250617163253-0zovhmh.png)
 
-注册后访问接口：https://www.apihz.cn/api/wangzhanicp.html，如下图，就能得到你自己的key。
+注册后访问接口：https://www.apihz.cn/api/wangzhanicp.html
+
+如下图，就能得到你自己的key。
 
 ![image](./images/image-20250617163128-4v6yvdd.png)将id和key填入系统配置的：icpapi_apihz，然后点击保存配置即可。
 
