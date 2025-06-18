@@ -10,7 +10,7 @@
 
 #### 文件hash：
 
-MD5 的 IPTraceabilityToolV2.0.exe 哈希:4859a000990c6c7fc9cedceccc07fdc0  
+MD5 的 IPTraceabilityToolV2.0.exe 哈希:74bc8afab025f4eb0eedc5b950a58380
 
 # 一、工具背景
 
@@ -141,4 +141,6 @@ MD5 的 IPTraceabilityToolV2.0.exe 哈希:4859a000990c6c7fc9cedceccc07fdc0
 
 2、也不支持fofa、hunter等引擎的搜索，因为我也没会员。
 
-3、程序仅支持win10、win11，因为使用的开放环境版本过高，无法已停止对win7的支持。
+3、程序仅支持win10、win11，因为使用的开发环境版本过高，已停止对win7的支持。
+
+4、请勿启动代理后使用软件，这样会导致查询第三方API失败，导致结果不准确。
