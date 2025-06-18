@@ -15,11 +15,11 @@
 
 #### 文件hash：
 
-MD5 的 IPTraceabilityToolV2.0.exe 哈希:74bc8afab025f4eb0eedc5b950a58380
+MD5 的 IPTraceabilityToolV2.0.exe 哈希:
 
 国内下载源：
 
-微云：https://share.weiyun.com/K4Pmkrpw
+微云：
 
 # 一、工具背景
 
