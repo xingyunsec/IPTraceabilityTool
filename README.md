@@ -1,5 +1,7 @@
 # IP白名单过滤与溯源工具V2.0使用说明
 
+如果对于该项目感兴趣，那帮我点个star吧！
+
 **温馨提示：**
 
 该工具运行时不会使用本机主动对目标IP进行扫描，但是会调用第三方接口，所以会存在对互联网发送大量HTTP请求情况，使用时请保持网络畅通，如果网络环境比较特殊的场景下请勿使用该工具，避免引起不必要的麻烦。
@@ -15,11 +17,11 @@
 
 #### 文件hash：
 
-MD5 的 IPTraceabilityToolV2.0.exe 哈希:
+MD5 的 IPTraceabilityToolV2.0.exe 哈希:1f47a5cbcfc126826d8306e1de1555f5
 
 国内下载源：
 
-微云：
+微云：https://share.weiyun.com/xwyztd1A
 
 # 一、工具背景
 
@@ -153,3 +155,6 @@ MD5 的 IPTraceabilityToolV2.0.exe 哈希:
 3、程序仅支持win10、win11，因为使用的开发环境版本过高，已停止对win7的支持。
 
 4、请勿启动代理后使用软件，这样会导致查询第三方API失败，导致结果不准确。
+
+## Stargazers over time
+[![Stargazers over time](https://starchart.cc/xingyunsec/IPTraceabilityTool.svg?variant=adaptive)](https://starchart.cc/xingyunsec/IPTraceabilityTool)
