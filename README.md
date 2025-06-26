@@ -156,5 +156,9 @@ MD5 的 IPTraceabilityToolV2.0.exe 哈希:1f47a5cbcfc126826d8306e1de1555f5
 
 4、请勿启动代理后使用软件，这样会导致查询第三方API失败，导致结果不准确。
 
+# 六、友情连接
+
+一款为所有CLI工具提供GUI的工具管理平台：https://github.com/honmashironeko/WhiteCatToolbox
+
 ## Stargazers over time
 [![Stargazers over time](https://starchart.cc/xingyunsec/IPTraceabilityTool.svg?variant=adaptive)](https://starchart.cc/xingyunsec/IPTraceabilityTool)
