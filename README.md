@@ -38,6 +38,12 @@ MD5 的 IPTraceabilityToolV2.0.exe 哈希:aed95b60437643f9249c7a4bf79191a2
 
 项目地址：https://github.com/xingyunsec/IPTraceabilityTool
 
+## V2.1
+
+1、由于bing接口反查域名更新，导致工具出现误报，已去除该接口。
+
+## V2.0
+
 1、可导入或单条添加自定义白名单，复制IP从白名单中进行过滤，单次最多支持1000IP；
 
 2、支持对过滤后的非白名单IP一键溯源，主要溯源内容：归属地、端口、IP绑定域名、域名whois、域名ICP备案。
