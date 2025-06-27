@@ -8,7 +8,8 @@
 
 后门？工具不会收集用户任何信息，请放心使用，不存在任何后门。请勿以谣传谣，使用时注意hash核对。
 
-![image](https://github.com/user-attachments/assets/57a3c997-d0cd-4ec4-ad69-a5d392f4736b)
+![4d8281a4-23d5-43ca-bc9c-4cc7711df470](https://github.com/user-attachments/assets/7a513f53-cb68-4abb-b011-2d513c8abf26)
+
 
 
 **免责声明：**
@@ -17,11 +18,11 @@
 
 #### 文件hash：
 
-MD5 的 IPTraceabilityToolV2.0.exe 哈希:1f47a5cbcfc126826d8306e1de1555f5
+MD5 的 IPTraceabilityToolV2.0.exe 哈希:aed95b60437643f9249c7a4bf79191a2
 
 国内下载源：
 
-微云：https://share.weiyun.com/xwyztd1A
+微云：[https://share.weiyun.com/xwyztd1A](https://share.weiyun.com/vyFYR4AU)
 
 # 一、工具背景
 
