@@ -147,7 +147,8 @@ MD5 的 IPTraceabilityToolV2.0.exe 哈希:aed95b60437643f9249c7a4bf79191a2
 
 如果需要进一步交流，可加入群聊：
 
-![image](./images/image-20250617194011-tk1718h.png)
+![image](https://github.com/user-attachments/assets/627d15d6-71be-4e69-a30d-3845d86e0126)
+
 
 如需源码或其他事项沟通，请加微信：
 
